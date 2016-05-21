@@ -1,6 +1,14 @@
-$(document).ready(function() {
+
+$(function(){
+        		$("#gtbutton").on("click", function(e){
+        			e.preventDefault();
+        			$(function() {
     $.ajax({
-        url: "https://api.github.com/users/omoragbon"
+    	var username = $('username').val();
+       var url: "6569https://api.github.com/users/" + username;
+       requestJSON( requri, function()
+       	)
+
     }).then(function(data) {
        $('.greeting-id').append(data.id);
        $('.greeting-content').append(data.type);
@@ -9,3 +17,8 @@ $(document).ready(function() {
        $(".date_of_creation").append(data.created_at);
     });
 });
+        		
+
+        		})
+        	})
+
